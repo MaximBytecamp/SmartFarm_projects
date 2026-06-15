@@ -14,17 +14,15 @@ class Plant(FarmObject):
     def __init__(
             self,
             object_id: int,
-            name: str,
             plant_type: str,
-            growth_stage: str, 
-            health_level: int, 
+            growth_stage: str,
+            health_level: int,
             water_required: bool,
     ) -> None:
-        super().__init__(object_id, name)
+        super().__init__(object_id, plant_type)
         if growth_stage not in self.growth_stages:
             growth_stage = self.growth_stages[0]
 
-        self.plant_type = plant_type
         self.growth_stage = growth_stage
         self.health_level = health_level
         self.water_required = water_required
@@ -74,13 +72,14 @@ class Plant(FarmObject):
         water_status = "нужен полив" if self.water_required else "полив не нужен"
 
         return (
-            f"Растение {self.name} тип {self.plant_type}, этап {self.growth_stage}"
+            f"Растение {self.name}, этап {self.growth_stage}, "
             f"здоровье {self.health_level}, {water_status}"
         )
     
 
     def __str__(self) -> str:
-        return f"{self.name} ({self.plant_type}) - здоровье {self.health_level}"
+        return f"{self.name} - здоровье {self.health_level}"
     
     def __lt__(self, other: "Plant") -> bool:
         return self.health_level < other.health_level
+    
