@@ -1,8 +1,8 @@
-from smart_farm.exceptions.farm_exceptions import ObjectAlreadyExistsError, ObjectNotFoundError
-from smart_farm.models.animal import Animal
-from smart_farm.models.zone import Zone 
+from exceptions.farm_exceptions import ObjectAlreadyExistsError, ObjectNotFoundError
+from models.animal import Animal
+from models.zone import Zone 
 
-class Greenhouse(Zone):
+class AnimalZone(Zone):
     def __init__(self, zone_id: int, name: str) -> None:
         super().__init__(zone_id, name)
         self.animals: list[Animal] = []
