@@ -1,4 +1,4 @@
-from smart_farm.models.farm_object import FarmObject
+from models.farm_object import FarmObject
 from exceptions.farm_exceptions import InvalidHealthLevelError
 
 class Animal(FarmObject):
