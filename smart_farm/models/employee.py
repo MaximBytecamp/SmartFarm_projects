@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from smart_farm.exceptions.farm_exceptions import ObjectNotFoundError
-from smart_farm.models.animal import Animal
-from smart_farm.models.plant import Plant 
-from smart_farm.models.task import Task 
+from exceptions.farm_exceptions import ObjectNotFoundError
+from models.animal import Animal
+from models.plant import Plant 
+from models.task import Task 
 
 class Employee(ABC):
     def __init__(self, employee_id: int, name: str, position: str) -> None:
