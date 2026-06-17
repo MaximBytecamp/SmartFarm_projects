@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from smart_farm.exceptions.farm_exceptions import ObjectAlreadyExistsError
-from smart_farm.models.sensor import Sensor 
+from exceptions.farm_exceptions import ObjectAlreadyExistsError
+from models.sensor import Sensor 
 
 class Zone(ABC):
     def __init__(self, zone_id: int, name: str) -> None:
