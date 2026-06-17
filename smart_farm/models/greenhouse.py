@@ -1,6 +1,6 @@
-from smart_farm.exceptions.farm_exceptions import ObjectAlreadyExistsError, ObjectNotFoundError
-from smart_farm.models.plant import Plant 
-from smart_farm.models.zone import Zone 
+from exceptions.farm_exceptions import ObjectAlreadyExistsError, ObjectNotFoundError
+from models.plant import Plant 
+from models.zone import Zone 
 
 class Greenhouse(Zone):
     def __init__(self, zone_id: int, name: str) -> None:
@@ -12,7 +12,7 @@ class Greenhouse(Zone):
         if plant in self.plants:
             raise ObjectAlreadyExistsError(f"Растение {plant.name} уже есть в теплице")
 
-        self.plants.apppend(plant)
+        self.plants.append(plant)
         return f"В теплицу {self.name} добавлено растение {plant.name}"
 
 
