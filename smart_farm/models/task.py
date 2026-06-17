@@ -40,3 +40,4 @@ class Task:
 
     def __lt__(self, other: "Task") -> bool:
         return self.priority_order[self.priority] < self.priority_order[other.priority]
+
