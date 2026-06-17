@@ -77,7 +77,7 @@ class Veterinarian(Employee):
     
 
     def feed_animal(self, animal: Animal) -> str: 
-        return animal.feed
+        return animal.feed()
     
 
 
